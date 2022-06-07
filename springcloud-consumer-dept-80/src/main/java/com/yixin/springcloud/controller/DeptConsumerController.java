@@ -15,9 +15,11 @@ public class DeptConsumerController {
     //RestTemplate  供我们直接调用就好了，注册到spring
     //(url,实体：Map，class<T> responseType)
     @Autowired
-    private RestTemplate restTemplate;
+    private RestTemplate restTemplate;  //提供多种便捷访问远程http服务的方法，简单的restful的服务模板
     //定义访问地址前缀常量
-    private static final String REST_URL_PREFIX = "http://localhost:8001";
+    //private static final String REST_URL_PREFIX = "http://localhost:8001";
+    //ribbon 这里的地址应该是一个变量，通过服务名来访问          //SPRINGCLOUD-PROVIDER-DEPT
+    private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-PROVIDER-DEPT";
 
     //通过访问提供者模块添加
     @RequestMapping("/consumer/dept/add")
